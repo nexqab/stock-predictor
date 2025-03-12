@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Prognosis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="max-w-3xl mx-auto my-10 bg-white p-6 shadow-xl rounded-xl">
+        <h1 class="text-2xl font-bold mb-4">Stock Prediction</h1>
+
+        <form method="POST" class="mb-6">
+            <input type="text" name="symbol" placeholder="Enter stock symbol (e.g., TSLA)" class="border rounded p-2 w-full" required>
+            <button class="mt-4 bg-blue-600 text-white py-2 px-4 rounded w-full">Predict</button>
+        </form>
+
+        {% if prognosis %}
+        <div class="mt-6">
+            <h2 class="text-xl font-bold">{{ prognosis.symbol }}</h2>
+            <p class="mt-4 text-lg">📈 Prediction for {{ prognosis.timeframe }}: <strong>{{ prognosis.forecast }}</strong></p>
+        </div>
+        {% elif error %}
+            <p class="text-red-500 mt-4">{{ error }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

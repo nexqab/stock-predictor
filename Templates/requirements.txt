@@ -1,0 +1,11 @@
+flask
+pandas
+numpy
+yfinance
+scikit-learn
+joblib
+openai
+finnhub-python
+requests
+python-dotenv
+gunicorn
