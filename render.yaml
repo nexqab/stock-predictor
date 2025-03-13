@@ -2,6 +2,7 @@ services:
   - name: stock-predictor
     type: web
     env: python
+    plan: free
     buildCommand: |
       pip install --upgrade pip
       pip install -r requirements.txt
