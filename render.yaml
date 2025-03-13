@@ -3,12 +3,15 @@ services:
     type: web
     env: python
     plan: free
-    pythonVersion: 3.11.11  # Add the full Python version
+    pythonVersion: 3.11.11  # Ensure full Python version
     buildCommand: |
       pip install --upgrade pip
       pip install -r requirements.txt
-      pip install gunicorn  # Ensure Gunicorn is installed
-    startCommand: gunicorn -w 4 -b 0.0.0.0:8000 app:app
+      pip install gunicorn
+      which gunicorn
+      ls -lah /opt/render/project/src/.venv/bin/
+
+    startCommand: /opt/render/project/src/.venv/bin/gunicorn -w 4 -b 0.0.0.0:8000 app:app
     envVars:
       - key: PORT
         value: 8000
