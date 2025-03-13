@@ -3,6 +3,7 @@ services:
     type: web
     env: python
     plan: free
+    pythonVersion: 3.11.11  # Add the full Python version
     buildCommand: |
       pip install --upgrade pip
       pip install -r requirements.txt
